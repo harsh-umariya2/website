@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Love Login</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       padding: 0;
       background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
       height: 100vh;
-      overflow: hidden;
       font-family: 'Poppins', sans-serif;
+      overflow: hidden;
     }
 
     /* Floating Hearts */
@@ -50,17 +55,37 @@
         transform: translateY(100vh) rotate(45deg);
         opacity: 1;
       }
+
       100% {
         transform: translateY(-10vh) rotate(45deg);
         opacity: 0;
       }
     }
 
-    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .heart:nth-child(2) { left: 30%; animation-delay: 2s; }
-    .heart:nth-child(3) { left: 50%; animation-delay: 4s; }
-    .heart:nth-child(4) { left: 70%; animation-delay: 1s; }
-    .heart:nth-child(5) { left: 90%; animation-delay: 3s; }
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .heart:nth-child(2) {
+      left: 30%;
+      animation-delay: 2s;
+    }
+
+    .heart:nth-child(3) {
+      left: 50%;
+      animation-delay: 4s;
+    }
+
+    .heart:nth-child(4) {
+      left: 70%;
+      animation-delay: 1s;
+    }
+
+    .heart:nth-child(5) {
+      left: 90%;
+      animation-delay: 3s;
+    }
 
     /* Login Form */
     .login-box {
@@ -84,41 +109,15 @@
       font-weight: 600;
     }
 
-    .login-box input[type="text"],
-    .login-box input[type="password"] {
-      width: 80%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 2px solid #ff99bb;
-      border-radius: 10px;
-      outline: none;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-    }
-
-    .login-box input[type="submit"] {
-      background-color: #ff3399;
-      color: white;
-      padding: 10px 30px;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-    }
-
-    .login-box input[type="submit"]:hover {
-      background-color: #cc0066;
-    }
-
     .love-footer {
       margin-top: 15px;
       font-size: 13px;
       color: #cc3366;
     }
   </style>
+
 </head>
+
 <body>
 
   <!-- Floating hearts -->
@@ -132,9 +131,15 @@
   <div class="login-box">
     <h2>Welcome in your world</h2>
     <form action="home.html" method="GET">
-      <input type="text" placeholder="Your Name" required><br>
-      <input type="password" placeholder="Secret Code" required><br>
-      <input type="submit" value="Login with Love">
+      <div class="mb-3">
+        <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control form-control-lg" placeholder="Secret Code" required>
+      </div>
+      <div class="mb-3">
+        <input type="submit" class="btn btn-pink btn-lg w-100" value="Login with Love">
+      </div>
     </form>
 
     <div class="love-footer">
@@ -142,6 +147,10 @@
     </div>
   </div>
 
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
