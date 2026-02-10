@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why I Love You ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose-pink: #ff6b9d;
+      --deep-rose: #c44569;
+      --soft-cream: #fff5f7;
+      --charcoal: #2d3436;
+      --shadow: rgba(196, 69, 105, 0.2);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+      color: var(--charcoal);
+      padding: 80px 20px 150px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: '💕';
+      position: absolute;
+      font-size: 20rem;
+      opacity: 0.05;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      text-align: center;
+      color: var(--deep-rose);
+      margin-bottom: 80px;
+      font-weight: 700;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .reasons-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .reason-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px var(--shadow);
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      opacity: 0;
+      animation: fadeInScale 0.6s ease-out forwards;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .reason-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--rose-pink), var(--deep-rose));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .reason-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .reason-card:nth-child(1) { animation-delay: 0.1s; }
+    .reason-card:nth-child(2) { animation-delay: 0.2s; }
+    .reason-card:nth-child(3) { animation-delay: 0.3s; }
+    .reason-card:nth-child(4) { animation-delay: 0.4s; }
+    .reason-card:nth-child(5) { animation-delay: 0.5s; }
+    .reason-card:nth-child(6) { animation-delay: 0.6s; }
+    
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .reason-card:hover {
+      transform: translateY(-10px) rotate(1deg);
+      box-shadow: 0 15px 50px var(--shadow);
+    }
+    
+    .reason-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: iconFloat 3s ease-in-out infinite;
+    }
+    
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .reason-card:nth-child(even) .reason-icon {
+      animation-delay: 1.5s;
+    }
+    
+    .reason-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--deep-rose);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .reason-text {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    .nav-buttons {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
+    }
+    
+    .nav-btn {
+      padding: 15px 35px;
+      background: linear-gradient(135deg, var(--rose-pink), var(--deep-rose));
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px var(--shadow);
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--shadow);
+    }
+  </style>
+</head>
+<body>
+  <h2 class="section-title">Why I Love You</h2>
+  
+  <div class="reasons-grid">
+    <div class="reason-card">
+      <div class="reason-icon">😊</div>
+      <div class="reason-title">Your Smile</div>
+      <div class="reason-text">
+        Your smile brightens my darkest days and makes every moment worth living. It's my favorite thing in the world.
+      </div>
+    </div>
+    
+    <div class="reason-card">
+      <div class="reason-icon">💪</div>
+      <div class="reason-title">Your Strength</div>
+      <div class="reason-text">
+        Your resilience and determination inspire me every single day. You face challenges with such grace and courage.
+      </div>
+    </div>
+    
+    <div class="reason-card">
+      <div class="reason-icon">❤️</div>
+      <div class="reason-title">Your Kindness</div>
+      <div class="reason-text">
+        The way you care for everyone around you, your compassion and empathy, makes you truly special.
+      </div>
+    </div>
+    
+    <div class="reason-card">
+      <div class="reason-icon">🌟</div>
+      <div class="reason-title">Your Uniqueness</div>
+      <div class="reason-text">
+        You're unlike anyone I've ever met. Your quirks, your passions, everything about you is perfectly you.
+      </div>
+    </div>
+    
+    <div class="reason-card">
+      <div class="reason-icon">😂</div>
+      <div class="reason-title">Your Laughter</div>
+      <div class="reason-text">
+        The sound of your laughter is music to my ears. Making you laugh is my favorite accomplishment.
+      </div>
+    </div>
+    
+    <div class="reason-card">
+      <div class="reason-icon">🫶</div>
+      <div class="reason-title">Your Love</div>
+      <div class="reason-text">
+        The way you love me, unconditionally and completely, makes me want to be the best version of myself.
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="window.location.href='page3.html'">← Back</button>
+    <button class="nav-btn" onclick="window.location.href='page5.html'">Next →</button>
+  </div>
+</body>
+</html>

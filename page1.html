@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome - Valentine's Day ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose-pink: #ff6b9d;
+      --deep-rose: #c44569;
+      --soft-cream: #fff5f7;
+      --gold: #d4af37;
+      --charcoal: #2d3436;
+      --shadow: rgba(196, 69, 105, 0.2);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #ff6b9d 75%, #fec194 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .rose {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.3;
+      animation: floatRose 15s linear infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes floatRose {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 0.3; }
+      90% { opacity: 0.3; }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    .login-container {
+      background: rgba(255, 255, 255, 0.98);
+      padding: 60px 50px;
+      border-radius: 30px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      animation: scaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 10;
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .login-heart {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      10%, 30% { transform: scale(1.1); }
+      20%, 40% { transform: scale(1); }
+    }
+    
+    .login-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--deep-rose);
+      margin-bottom: 15px;
+      font-weight: 900;
+    }
+    
+    .login-subtitle {
+      font-size: 1.3rem;
+      color: #666;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+    
+    .login-input {
+      width: 100%;
+      padding: 18px 25px;
+      font-size: 1.1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 50px;
+      margin-bottom: 25px;
+      font-family: 'Cormorant Garamond', serif;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .login-input:focus {
+      outline: none;
+      border-color: var(--rose-pink);
+      box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+    }
+    
+    .login-btn {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--rose-pink), var(--deep-rose));
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px var(--shadow);
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .login-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--shadow);
+    }
+    
+    .error-message {
+      color: #e74c3c;
+      margin-top: 15px;
+      display: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Roses -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const rose = document.createElement('div');
+      rose.className = 'rose';
+      rose.textContent = '🌹';
+      rose.style.left = Math.random() * 100 + '%';
+      rose.style.animationDelay = Math.random() * 15 + 's';
+      rose.style.animationDuration = (Math.random() * 10 + 10) + 's';
+      document.body.appendChild(rose);
+    }
+  </script>
+
+  <div class="login-container">
+    <div class="login-heart">💝</div>
+    <h1 class="login-title">Welcome</h1>
+    <p class="login-subtitle">Enter the secret password</p>
+    <input 
+      type="password" 
+      class="login-input" 
+      id="passwordInput" 
+      placeholder="Password"
+      onkeypress="if(event.key === 'Enter') checkPassword()"
+    />
+    <button class="login-btn" onclick="checkPassword()">Enter ❤️</button>
+    <p class="error-message" id="errorMessage">Wrong password! Try again 💔</p>
+  </div>
+
+  <script>
+    const correctPassword = "iloveyou"; // Change this to your desired password
+    
+    function checkPassword() {
+      const input = document.getElementById('passwordInput');
+      const errorMsg = document.getElementById('errorMessage');
+      
+      if (input.value.toLowerCase() === correctPassword) {
+        // Redirect to page 2
+        window.location.href = "page2.html";
+      } else {
+        errorMsg.style.display = 'block';
+        input.value = '';
+        input.focus();
+      }
+    }
+  </script>
+</body>
+</html>

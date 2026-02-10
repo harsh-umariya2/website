@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memories ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose-pink: #ff6b9d;
+      --deep-rose: #c44569;
+      --soft-cream: #fff5f7;
+      --charcoal: #2d3436;
+      --shadow: rgba(196, 69, 105, 0.2);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: var(--soft-cream);
+      color: var(--charcoal);
+      padding: 80px 20px 150px;
+      min-height: 100vh;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      text-align: center;
+      color: var(--deep-rose);
+      margin-bottom: 80px;
+      font-weight: 700;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #ffd4e5, #ffe0ec);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      box-shadow: 0 8px 25px var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--rose-pink), var(--deep-rose));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .gallery-item:hover::before {
+      opacity: 0.9;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+    
+    .gallery-placeholder {
+      font-size: 1.2rem;
+      color: var(--deep-rose);
+      position: relative;
+      z-index: 2;
+      opacity: 0.7;
+      font-weight: 600;
+      transition: all 0.4s ease;
+      text-align: center;
+    }
+    
+    .gallery-item:hover .gallery-placeholder {
+      opacity: 0;
+    }
+    
+    .nav-buttons {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
+    }
+    
+    .nav-btn {
+      padding: 15px 35px;
+      background: linear-gradient(135deg, var(--rose-pink), var(--deep-rose));
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px var(--shadow);
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--shadow);
+    }
+  </style>
+</head>
+<body>
+  <h2 class="section-title">Our Memories</h2>
+  
+  <<div class="gallery-grid">
+    <!-- Photo 1 -->
+    <div class="gallery-item">
+      <img src="img1.JPG" alt="Our Memory" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    </div>
+    
+    <!-- Photo 2 -->
+    <div class="gallery-item">
+      <img src="photo2.jpg" alt="Our Memory" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    </div>
+    
+    <!-- Photo 3 -->
+    <div class="gallery-item">
+      <img src="photo3.jpg" alt="Our Memory" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    </div>
+    
+    <!-- Photo 4 -->
+    <div class="gallery-item">
+      <img src="photo4.jpg" alt="Our Memory" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    </div>
+    
+    <!-- Photo 5 -->
+    <div class="gallery-item">
+      <img src="photo5.jpg" alt="Our Memory" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    </div>
+    
+    <!-- Photo 6 -->
+    <div class="gallery-item">
+      <img src="photo6.jpg" alt="Our Memory" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    </div>
+    <!-- Photo 7 -->
+    <div class="gallery-item">
+      <img src="photo6.jpg" alt="Our Memory" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    </div>
+    <!-- Photo 8 -->
+    <div class="gallery-item">
+      <img src="photo6.jpg" alt="Our Memory" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    </div>
+</div>
+
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="window.location.href='page4.html'">← Back</button>
+    <button class="nav-btn" onclick="window.location.href='page6.html'">Next →</button>
+  </div>
+</body>
+</html>

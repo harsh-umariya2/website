@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Letter To My Love ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose-pink: #ff6b9d;
+      --deep-rose: #c44569;
+      --soft-cream: #fff5f7;
+      --charcoal: #2d3436;
+      --shadow: rgba(196, 69, 105, 0.2);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: linear-gradient(135deg, #ffe4ec 0%, #ffd4e5 100%);
+      color: var(--charcoal);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px 150px;
+    }
+    
+    .letter {
+      max-width: 700px;
+      background: white;
+      padding: 60px;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px var(--shadow);
+      position: relative;
+      animation: letterAppear 1s ease-out;
+    }
+    
+    @keyframes letterAppear {
+      from {
+        opacity: 0;
+        transform: translateY(50px) rotateX(20deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+      }
+    }
+    
+    .letter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--rose-pink),
+        var(--rose-pink) 10px,
+        var(--deep-rose) 10px,
+        var(--deep-rose) 20px
+      );
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .letter-date {
+      text-align: right;
+      color: #888;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+    
+    .letter-greeting {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--deep-rose);
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+    
+    .letter-content {
+      font-size: 1.3rem;
+      line-height: 2;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+    
+    .letter-signature {
+      text-align: right;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--deep-rose);
+      margin-top: 40px;
+      font-style: italic;
+    }
+    
+    .nav-buttons {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
+    }
+    
+    .nav-btn {
+      padding: 15px 35px;
+      background: linear-gradient(135deg, var(--rose-pink), var(--deep-rose));
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px var(--shadow);
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--shadow);
+    }
+    
+    @media (max-width: 768px) {
+      .letter {
+        padding: 40px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="letter">
+    <div class="letter-date">Valentine's Day 2026</div>
+    <div class="letter-greeting">My Dearest Love,</div>
+    <div class="letter-content">
+      Words can never fully express how much you mean to me, but I'll try anyway. You are my best friend, my confidant, my partner in everything. Every moment with you is a treasure I hold close to my heart.
+    </div>
+    <div class="letter-content">
+      Thank you for being patient with me, for believing in us, and for choosing me every single day. You make me want to be better, to love deeper, and to dream bigger.
+    </div>
+    <div class="letter-content">
+      This Valentine's Day, and every day after, I promise to love you with all that I am. You are my today and all of my tomorrows.
+    </div>
+    <div class="letter-signature">Forever Yours 💕</div>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="window.location.href='page5.html'">← Back</button>
+    <button class="nav-btn" onclick="window.location.href='page7.html'">Next →</button>
+  </div>
+</body>
+</html>
